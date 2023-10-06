@@ -1,0 +1,42 @@
+[
+    {
+        "Animal": "Dog",
+        "Breed": "Husky",
+        "Name": "Snow",
+        "Temperament": "Loud",
+        "Age": 4,
+        "Activity": "Active"
+    },
+    {
+        "Animal": "Cat",
+        "Breed": "Siamese",
+        "Name": "Milo",
+        "Temperament": "Shy",
+        "Age": 8,
+        "Activity": "Low"
+    },
+    {
+        "Animal": "Cat",
+        "Breed": "Persian",
+        "Name": "Jeff",
+        "Temperament": "Curious",
+        "Age": 5,
+        "Activity": "Medium"
+    },
+    {
+        "Animal": "Dog",
+        "Breed": "Lab",
+        "Name": "Bear",
+        "Temperament": "Friendly",
+        "Age": 7,
+        "Activity": "Medium"
+    },
+    {
+        "Animal": "Dog",
+        "Breed": "Pug",
+        "Name": "Buster",
+        "Temperament": "Lazy",
+        "Age": 6,
+        "Activity": "Low"
+    }
+]
