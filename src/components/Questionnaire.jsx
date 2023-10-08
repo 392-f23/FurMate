@@ -7,7 +7,7 @@ const Questionnaire = () => {
     questions: [
       {
         question: "How old are you?",
-        answers: ["<18>", "18-24", ">24", ">50"],
+        answers: ["<18", "18-24", ">24", ">50"],
       },
       {
         question: "Which planet is known as the Red Planet?",
@@ -33,7 +33,7 @@ const Questionnaire = () => {
     ],
   };
 
-//   const [answers, setAnswers] = useState([]);
+//  const [answers, setAnswers] = useState([]);
 
   return (
     <div>

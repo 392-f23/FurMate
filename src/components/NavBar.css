@@ -1,0 +1,42 @@
+/* NavBar.css */
+
+.sidebar {
+    background-color: #333; /* Dark background for the sidebar */
+    width: 250px; /* Width of the sidebar */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed position */
+    top: 0; /* Start from the top */
+    left: 0; /* Start from the left */
+    overflow-y: auto; /* Scrollable if content exceeds height */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for opening/closing */
+    transform: translateX(-100%); /* Initially hidden */
+    z-index: 1000; /* High z-index to ensure it's on top */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+}
+
+.navBarColumn {
+    flex-direction: column; /* Stack links vertically */
+    height: 100%; /* Full height */
+    padding: 20px; /* Padding around the links */
+}
+
+.navBarColumn .nav-link {
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding around each link */
+    margin-bottom: 10px; /* Space between links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navBarColumn .nav-link:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.navBarColumn .nav-link.active {
+    background-color: #007bff; /* Blue background for active link */
+    color: white; /* White text for active link */
+}
