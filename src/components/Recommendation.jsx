@@ -3,7 +3,7 @@ import '/src/components/recommendation.css';
 const Recommendation = ({ pet }) => {
     return (
       <div className="recommendation-card">
-        <img src={`./src/assets/${pet.Image}`}alt={`./assets/${pet.Image}`} className="pet-image" />
+        <img src={pet.Image} alt={`./assets/${pet.Image}`} className="pet-image" />
         <div className="pet-details">
           <h3>{pet.Name}</h3>
           <p><strong>Breed:</strong> {pet.Breed}</p>

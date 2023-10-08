@@ -1,42 +1,48 @@
 /* NavBar.css */
 
 .sidebar {
-    background-color: #333; /* Dark background for the sidebar */
-    width: 250px; /* Width of the sidebar */
-    height: 100vh; /* Full viewport height */
-    position: fixed; /* Fixed position */
-    top: 0; /* Start from the top */
-    left: 0; /* Start from the left */
-    overflow-y: auto; /* Scrollable if content exceeds height */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for opening/closing */
-    transform: translateX(-100%); /* Initially hidden */
-    z-index: 1000; /* High z-index to ensure it's on top */
+    background-color: #333;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1000; 
 }
 
 .sidebar.open {
-    transform: translateX(0); /* Show sidebar when open */
+    transform: translateX(0);
 }
 
 .navBarColumn {
-    flex-direction: column; /* Stack links vertically */
-    height: 100%; /* Full height */
-    padding: 20px; /* Padding around the links */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px; 
 }
 
 .navBarColumn .nav-link {
-    color: white; /* White text color */
-    padding: 10px 15px; /* Padding around each link */
-    margin-bottom: 10px; /* Space between links */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .navBarColumn .nav-link:hover {
-    background-color: #555; /* Slightly lighter background on hover */
-    text-decoration: none; /* Remove underline on hover */
+    background-color: #555;
+    text-decoration: none;
 }
 
 .navBarColumn .nav-link.active {
-    background-color: #007bff; /* Blue background for active link */
-    color: white; /* White text for active link */
+    background-color: #007bff;
+    color: white;
+}
+
+.navBarColumn .nav{
+    flex-direction: column;
 }
