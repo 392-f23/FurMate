@@ -5,7 +5,8 @@
         "Name": "Snow",
         "Temperament": "Loud",
         "Age": 4,
-        "Activity": "Active"
+        "Activity": "Active",
+        "Image": "husky.jpg"
     },
     {
         "Animal": "Cat",
@@ -13,7 +14,8 @@
         "Name": "Milo",
         "Temperament": "Shy",
         "Age": 8,
-        "Activity": "Low"
+        "Activity": "Low",
+        "Image": "siamese.jpg"
     },
     {
         "Animal": "Cat",
@@ -21,7 +23,8 @@
         "Name": "Jeff",
         "Temperament": "Curious",
         "Age": 5,
-        "Activity": "Medium"
+        "Activity": "Medium",
+        "Image": "persian.jpg"
     },
     {
         "Animal": "Dog",
@@ -29,7 +32,8 @@
         "Name": "Bear",
         "Temperament": "Friendly",
         "Age": 7,
-        "Activity": "Medium"
+        "Activity": "Medium",
+        "Image": "lab.jpg"
     },
     {
         "Animal": "Dog",
@@ -37,6 +41,7 @@
         "Name": "Buster",
         "Temperament": "Lazy",
         "Age": 6,
-        "Activity": "Low"
+        "Activity": "Low",
+        "Image": "pug.jpg"
     }
 ]
