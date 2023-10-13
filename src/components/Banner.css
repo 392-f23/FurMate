@@ -1,0 +1,50 @@
+/* .topTitle {
+    background-color: rgb(196, 164, 132);
+    padding: 5px 0;
+    text-align: center;
+    margin: 0;
+}
+
+.navbar-toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border: black 1px;
+    font-size: 24px;
+    border-radius: 4px;
+    z-index: 1001;
+} */
+
+.topTitle {
+    background: linear-gradient(90deg, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%); /* Elegant gradient */
+    color: white;  /* White text */
+    text-align: center;
+    padding: 30px 0;  /* Ample padding top and bottom */
+    margin: 0;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);  /* Light shadow for depth */
+  }
+  
+  .topTitle h1 {
+    font-size: 3em;  /* Large, bold text */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .topTitle div {
+    font-size: 1.3em;  /* Substantial but not overwhelming */
+  }
+  
+  .navbar-toggle-button {
+    background: none;
+    border: none;
+    font-size: 2em;  /* Large icon size */
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;  /* Subtle transition */
+  }
+  
+  .navbar-toggle-button:hover {
+    color: #a8a8a8;  /* Slightly lighter color on hover */
+  }
+  
+

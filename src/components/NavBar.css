@@ -1,0 +1,48 @@
+/* NavBar.css */
+
+.sidebar {
+    background-color: #333;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1000; 
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.navBarColumn {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px; 
+}
+
+.navBarColumn .nav-link {
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navBarColumn .nav-link:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+.navBarColumn .nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.navBarColumn .nav{
+    flex-direction: column;
+}

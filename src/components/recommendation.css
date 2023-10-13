@@ -1,0 +1,40 @@
+.recommendation-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 300px;
+    margin: 16px;
+  }
+  
+  .recommendation-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .pet-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pet-details h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .pet-details p {
+    margin: 8px 0;
+    font-size: 0.9em;
+    color: #666;
+  }
+  

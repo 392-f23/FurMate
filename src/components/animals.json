@@ -1,0 +1,47 @@
+[
+    {
+        "Animal": "Dog",
+        "Breed": "Husky",
+        "Name": "Snow",
+        "Temperament": "Loud",
+        "Age": 4,
+        "Activity": "Active",
+        "Image": "https://firebasestorage.googleapis.com/v0/b/furmate-5e0bb.appspot.com/o/husky.jpg?alt=media&token=468d3378-6798-4234-bcdd-9739de365208&_gl=1*12s4pxi*_ga*MTMyMzY3NDkyOS4xNjk1MjQxMTI4*_ga_CW55HF8NVT*MTY5Njc5OTM3My43LjEuMTY5Njc5OTgxOS4yNy4wLjA."
+    },
+    {
+        "Animal": "Cat",
+        "Breed": "Siamese",
+        "Name": "Milo",
+        "Temperament": "Shy",
+        "Age": 8,
+        "Activity": "Low",
+        "Image": "https://firebasestorage.googleapis.com/v0/b/furmate-5e0bb.appspot.com/o/siamese.jpg?alt=media&token=6006a5bb-2101-42c9-9976-bb93d82ae9ce&_gl=1*17t3g5l*_ga*MTMyMzY3NDkyOS4xNjk1MjQxMTI4*_ga_CW55HF8NVT*MTY5Njc5OTM3My43LjEuMTY5Njc5OTg2My40NS4wLjA."
+    },
+    {
+        "Animal": "Cat",
+        "Breed": "Persian",
+        "Name": "Jeff",
+        "Temperament": "Curious",
+        "Age": 5,
+        "Activity": "Medium",
+        "Image": "https://firebasestorage.googleapis.com/v0/b/furmate-5e0bb.appspot.com/o/persian.jpg?alt=media&token=a2be4775-0a47-4e0e-b9d0-1f7a5f4fa9fc&_gl=1*moqchh*_ga*MTMyMzY3NDkyOS4xNjk1MjQxMTI4*_ga_CW55HF8NVT*MTY5Njc5OTM3My43LjEuMTY5Njc5OTcwMC41OS4wLjA."
+    },
+    {
+        "Animal": "Dog",
+        "Breed": "Lab",
+        "Name": "Bear",
+        "Temperament": "Friendly",
+        "Age": 7,
+        "Activity": "Medium",
+        "Image": "https://firebasestorage.googleapis.com/v0/b/furmate-5e0bb.appspot.com/o/lab.jpg?alt=media&token=d3350093-9b71-419d-aa98-fa6babf3dbba&_gl=1*1ne6wyd*_ga*MTMyMzY3NDkyOS4xNjk1MjQxMTI4*_ga_CW55HF8NVT*MTY5Njc5OTM3My43LjEuMTY5Njc5OTgzMi4xNC4wLjA."
+    },
+    {
+        "Animal": "Dog",
+        "Breed": "Pug",
+        "Name": "Buster",
+        "Temperament": "Lazy",
+        "Age": 6,
+        "Activity": "Low",
+        "Image": "https://firebasestorage.googleapis.com/v0/b/furmate-5e0bb.appspot.com/o/pug.jpg?alt=media&token=8cbbe1d7-0cb1-45fb-a6af-577f25d407d3&_gl=1*1ce1sr7*_ga*MTMyMzY3NDkyOS4xNjk1MjQxMTI4*_ga_CW55HF8NVT*MTY5Njc5OTM3My43LjEuMTY5Njc5OTg0OS41OS4wLjA."
+    }
+]
