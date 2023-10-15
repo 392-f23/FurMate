@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       <Banner banner="FurMate" message="Find Your Pet Today!"/>
-      <RecommendationList pets={animals}/>
+      <Questionnaire />
     </div>
   );
 };

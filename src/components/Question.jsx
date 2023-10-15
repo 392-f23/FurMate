@@ -1,34 +1,53 @@
 import { useState } from "react";
+import "/src/components/Question.css";
 
-// const [selectedAnswer, setSelectedAnswer] = useState('');
+// const [selectedAnswer, setSelectedAnswer] = useState(-1);
 
-const AnswerButton = ({key, selection, setSelection}) => {
-    return (
-        <div className="answer-list" >
-        {
-            Object.values(question.answers).map(answer => (
-                <div key={answer}>
-                    <input type="radio" id={bubble} checked={bubble === selectedAnswer} autoComplete="off" onChange={() => setSelectedAnswer(bubble)} />
-                </div>
-            ))
-        }
-    </div>
-    );
+const changeSelectedAnswer = (question, answer, selectedAnswers, setSelectedAnswers) => {
+    const selectedAnswers2 = selectedAnswers;
+    selectedAnswers2[question] = answer;
+    setSelectedAnswers(selectedAnswers2);
 }
 
-const Question = ({question}) => {
-    const [selectedAnswer, setSelectedAnswer] = useState('');
+const AnswerButton = ({ id, questionID, text, selection, setSelection, test }) => {
+  console.log("All Answers: "+test);
+  
+  const updateItemAtIndex = (index, newValue) => {
+    setSelection(prevItems => prevItems.map((item, i) => (i === index ? newValue : item)));
+  } 
 
-    return (
-        <>
-            <div>
-                {question.question}
-            </div>
-            {
-                Object.keys(question.answers).map(answer => <AnswerButton key={answer} selection={selectedAnswer} setSelection={setSelectedAnswer} />)
-            }
-        </>
-    );
+  const onClickRadio = (value) =>{
+    console.log("Answer of question " + questionID + " set to: "+ value);
+    updateItemAtIndex(questionID, value);
+  }
+
+  return (
+    <div class={`form-check ${selection === id? "form-selected": ""}`}
+        value={id}
+        onClick={(e) => onClickRadio(id)}>
+      <label class="form-check-label" for="flexRadioDefault1">
+        {text}
+      </label>
+    </div>
+  );
+};
+
+const Question = ({ id, question , selected, setSelected}) => {
+  return (
+    <>
+      <div>{question.question}</div>
+      {question.answers.map((answer, answerID) => (
+        <AnswerButton
+          id={answerID}
+          questionID = {id}
+          text={answer}
+          selection={selected[id]}
+          setSelection={setSelected}
+          test={selected}
+        />
+      ))}
+    </>
+  );
 };
 
 export default Question;
