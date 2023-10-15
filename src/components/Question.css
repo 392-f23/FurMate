@@ -1,0 +1,52 @@
+body, html {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    line-height: 1.5;
+}
+
+.question-list > div {
+    margin-bottom: 40px;
+    padding: 30px 35px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.question-list > div:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
+}
+
+.question-list > div > div:first-child {
+    font-weight: 500;
+    font-size: 20px;
+    color: #2a2a2a;
+    margin-bottom: 25px;
+}
+
+.form-check {
+    margin-bottom: 18px;
+    padding: 12px 18px;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.form-check:hover {
+    background-color: #f6f6f6;
+    transform: scale(1.01);
+}
+
+.form-check-input {
+    margin-right: 18px;
+    transform: scale(1.15);
+}
+
+.form-check-input, .form-check-label {
+    vertical-align: middle;
+}

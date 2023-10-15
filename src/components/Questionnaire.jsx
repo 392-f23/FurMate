@@ -32,12 +32,13 @@ const Questionnaire = () => {
       },
     ],
   };
-
+  // const emptyAnswers = [];
+  const [selectedAnswers, setSelectedAnswers] = useState(new Array(questionnaire.questions.length-1).fill(-1));
 //  const [answers, setAnswers] = useState([]);
 
   return (
-    <div>
-      <QuestionList questions= {questionnaire.questions} />
+    <div className='container'>
+      <QuestionList questions= {questionnaire.questions} selected={selectedAnswers} setSelected={setSelectedAnswers}/>
     </div>
   );
 };
