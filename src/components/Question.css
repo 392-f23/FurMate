@@ -37,6 +37,10 @@ body, html {
     cursor: pointer;
 }
 
+.form-selected{
+background-color: #bfbfbf;
+}
+
 .form-check:hover {
     background-color: #f6f6f6;
     transform: scale(1.01);

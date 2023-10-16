@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Questionnaire = () => {
   let navigate = useNavigate();
-  
+
   const questionnaire = {
     questions: [
       {
@@ -37,7 +37,7 @@ const Questionnaire = () => {
     ],
   };
   // const emptyAnswers = [];
-  const [selectedAnswers, setSelectedAnswers] = useState(new Array(questionnaire.questions.length-1).fill(-1));
+  const [selectedAnswers, setSelectedAnswers] = useState(new Array(questionnaire.questions.length).fill(-1));
 //  const [answers, setAnswers] = useState([]);
 
   return (
