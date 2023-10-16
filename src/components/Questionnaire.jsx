@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import QuestionList from "./QuestionList";
 import './Questionnaire.css'
+import { useNavigate } from 'react-router-dom';
+
 
 const Questionnaire = () => {
+  let navigate = useNavigate();
+  
   const questionnaire = {
     questions: [
       {
@@ -39,6 +43,7 @@ const Questionnaire = () => {
   return (
     <div className='container'>
       <QuestionList questions= {questionnaire.questions} selected={selectedAnswers} setSelected={setSelectedAnswers}/>
+      <button onClick={()=>navigate('/recommendations')}>Submit</button>
     </div>
   );
 };

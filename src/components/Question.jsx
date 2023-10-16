@@ -22,10 +22,10 @@ const AnswerButton = ({ id, questionID, text, selection, setSelection, test }) =
   }
 
   return (
-    <div class={`form-check ${selection === id? "form-selected": ""}`}
+    <div className={`form-check ${selection === id? "form-selected": ""}`}
         value={id}
         onClick={(e) => onClickRadio(id)}>
-      <label class="form-check-label" for="flexRadioDefault1">
+      <label className="form-check-label" for="flexRadioDefault1">
         {text}
       </label>
     </div>
