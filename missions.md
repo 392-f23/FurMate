@@ -1,8 +1,6 @@
-# components
-## questionair page
-Banner  
-question = course  
-questionlist (submit) = courseList  
-## result page
-recommandation card(breed, info)  
-recommandation list
+#  attributes
+*  activeness (0-2)
+*  independence (0-2)
+*  free time you have to play (0-2)
+*  size of your living space (0-3)
+*  intelligence level (0-4)

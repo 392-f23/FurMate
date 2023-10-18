@@ -6,19 +6,23 @@ import Banner from "./components/Banner";
 import RecommendationList from "./components/RecommendationList";
 import animals from "./components/animals";
 import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
-
+import BottomNavbar from "./components/BottomNavBar";
 
 
 const App = () => {
 
+  const [QuestionnaireResults, setQuestionnaireResults] = useState([]);
+
   return (
     <div className="App">
-      <Banner banner="FurMate" message="Find Your Pet Today!" />
+      
       <BrowserRouter>
+      <Banner banner="FurMate" message="Find Your Pet Today!" />
         <Routes>
-          <Route path="/" element={<Questionnaire />}></Route>
-          <Route path="/recommendations" element={<RecommendationList pets={animals} />}></Route>
+          <Route path="/" element={<Questionnaire setResults={setQuestionnaireResults}/>}></Route>
+          <Route path="/recommendations" element={<RecommendationList results={QuestionnaireResults} />}></Route>
         </Routes>
+        {/* <BottomNavbar /> */}
       </BrowserRouter>
     </div>
   );
