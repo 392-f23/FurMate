@@ -4,7 +4,6 @@ import "./App.css";
 import Questionnaire from "./components/Questionnaire";
 import Banner from "./components/Banner";
 import RecommendationList from "./components/RecommendationList";
-import animals from "./components/animals";
 import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
 import BottomNavbar from "./components/BottomNavBar";
 

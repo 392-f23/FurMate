@@ -1,34 +1,36 @@
-import animals from '../components/animals';
+import { useState, useEffect } from 'react';
+import { useDbData } from './firebase';
 
-export const getResults = (selectedAnswers) => {
-    let petsData = animals;
-    let petScores = [];
-    petScores = new Array(petsData.length).fill(null);
-    petsData.map((item, i) => petScores[i] = {pet: item, score: 0});
-    for (let i = 0; i < petsData.length; i++) {
-        // let petScore = 0;
+const useGetResults = (selectedAnswers) => {
+  const [data, error] = useDbData('/');
+  const [petScores, setPetScores] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      let petsData = data;
+      let scores = new Array(petsData.length).fill(null);
+      petsData.map((item, i) => scores[i] = {pet: item, score: 0});
+
+      for (let i = 0; i < petsData.length; i++) {
         for (let j = 0; j < selectedAnswers.length; j++) {
-            // const petAttribute = petsData[i].Stats[j];
-            // const attributeAnswer = selectedAnswers[j];
-            // const attributeScore = Math.abs(attributeAnswer - petAttribute);
-            petScores[i].score += Math.abs(selectedAnswers[j] - petsData[i].Stats[j]);
+          scores[i].score += Math.abs(selectedAnswers[j] - petsData[i].Stats[j]);
         }
-        // petScores[i].score = petScore;
-    }
+      }
 
-    console.log('Ready to sort: ', petScores);
+      //console.log('Ready to sort: ', scores);
 
-    /* petScores array is now populated with scores paired with the
-    pets in petsData */
-    /* Now we need to sort petScores so that it is in ascending order
-    according to the scores */
-
-    petScores.sort((a, b) => (
+      // Sorting the scores
+      scores.sort((a, b) => (
         a.score < b.score ? -1 : a.score > b.score ? 1 : 0
-    ));
+      ));
 
-    console.log('Sorted: ', petScores);
+      //console.log('Sorted: ', scores);
 
-    return petScores;
+      setPetScores(scores);
+    }
+  }, [data, selectedAnswers]);
 
-}
+  return { petScores, error };
+};
+
+export default useGetResults;
