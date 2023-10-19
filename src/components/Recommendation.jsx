@@ -1,6 +1,8 @@
 import '/src/components/recommendation.css';
-
+import { useAuthState } from '../utilities/firebase';
+import Star from './star';
 const Recommendation = ({ pet }) => {
+  const [user] = useAuthState();
     return (
       <div className="recommendation-card">
         <img src={pet.Image} alt={`./assets/${pet.Image}`} className="pet-image" />
@@ -11,6 +13,7 @@ const Recommendation = ({ pet }) => {
           <p><strong>Age:</strong> {pet.Age} years</p>
           <p><strong>Activity Level:</strong> {pet.Activity}</p>
         </div>
+        {user? <Star></Star>:<></>}
       </div>
     );
   }

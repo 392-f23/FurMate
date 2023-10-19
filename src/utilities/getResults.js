@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDbData } from './firebase';
 
 const useGetResults = (selectedAnswers) => {
-  const [data, error] = useDbData('/');
+  const [data, error] = useDbData('/pets/');
   const [petScores, setPetScores] = useState([]);
 
   useEffect(() => {

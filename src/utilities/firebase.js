@@ -1,22 +1,29 @@
 
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { useCallback, useEffect, useState } from 'react';
 import { getDatabase, onValue, ref, update } from 'firebase/database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBKR0DHhO8TKZsOcYWWsDaGHO3Q-F18e-M",
-    authDomain: "furmate-5e0bb.firebaseapp.com",
-    databaseURL: "https://furmate-5e0bb-default-rtdb.firebaseio.com",
-    projectId: "furmate-5e0bb",
-    storageBucket: "furmate-5e0bb.appspot.com",
-    messagingSenderId: "1011118654015",
-    appId: "1:1011118654015:web:f08ed151d09bf2e76f6e8a",
-    measurementId: "G-90DGGBF7SX"
-  };
+  apiKey: "AIzaSyBKR0DHhO8TKZsOcYWWsDaGHO3Q-F18e-M",
+  authDomain: "furmate-5e0bb.web.app",
+  databaseURL: "https://furmate-5e0bb-default-rtdb.firebaseio.com",
+  projectId: "furmate-5e0bb",
+  storageBucket: "furmate-5e0bb.appspot.com",
+  messagingSenderId: "1011118654015",
+  appId: "1:1011118654015:web:f08ed151d09bf2e76f6e8a",
+  measurementId: "G-90DGGBF7SX"
+};
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+let firebase;
+// Initialize Firebase
+if (!getApps().length){
+  firebase = initializeApp(firebaseConfig);
+}
+else {
+  firebase = getApp(firebaseConfig)
+}
 const database = getDatabase(firebase);
 
 export const useDbData = (path) => {
@@ -66,3 +73,4 @@ export const useAuthState = () => {
 
   return [user];
 };
+

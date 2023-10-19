@@ -40,3 +40,11 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.container {
+  padding-top: 200px;
+}
+
+.recommendation-list {
+  padding-top: 150px;
+}

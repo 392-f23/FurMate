@@ -1,10 +1,30 @@
+
+.auth {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.circle_profile_photo {
+  width: 37.33px; /* or your desired width */
+  height: 37.33px; /* or your desired height */
+  border-radius: 50%;
+  object-fit: cover; /* ensures the image scales correctly */
+  overflow: hidden; /* to make sure the image does not exceed the circle bounds */
+}
+
 .topTitle {
   background: linear-gradient(90deg, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
   color: white;
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 0;
   margin: 0;
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1); 
+  justify-content: space-between; 
+  position: fixed;  /* Make the banner fixed */
+  top: 0;          /* Anchor it to the top */
+  left: 0;         /* Anchor it to the left */
+  right: 0;        /* Make it span the full width */
+  z-index: 1000;   /* Ensure it stays on top of other content */
 }
 
 .topTitle h1 {
