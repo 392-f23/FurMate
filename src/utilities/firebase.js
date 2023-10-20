@@ -58,8 +58,14 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 
-export const signInWithGoogle = () => {
-  signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
+export const signInWithGoogle = async () => {
+  let provider = new GoogleAuthProvider();
+  provider.setCustomParameters({
+    prompt: "select_account"
+  });
+  const res = await signInWithPopup(getAuth(firebase), provider);
+  return res;
+
 };
 
 export const firebaseSignOut = () => signOut(getAuth(firebase));

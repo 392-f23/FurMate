@@ -4,19 +4,32 @@ import NavBar from "/src/components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { signInWithGoogle, firebaseSignOut, useAuthState } from '../utilities/firebase';
 import Dropdown from 'react-bootstrap/Dropdown';
-const Banner = ({banner, message}) => {
+import { useNavigate } from "react-router-dom";
+
+const Banner = ({ banner, message }) => {
 
     // const [navBarOpen, setNavBarOpen] = useState(false);
+    let navigate = useNavigate();
+
+    const handleSignOut = async () => {
+        var signOut = await firebaseSignOut();
+        navigate('/');
+    }
 
     const SignInButton = () => (
-        <button className="ms-auto btn btn-light loginbtn" onClick={signInWithGoogle}>Sign in</button>
+        <div>
+            {document.getElementById("login")?
+            <button className="ms-auto btn btn-light loginbtn" onClick={signInWithGoogle}>Sign in</button>:
+            ''
+            }
+        </div >
     );
-      
+
     const SignOutButton = () => (
-        <button className="ms-auto btn btn-dark loginbtn" onClick={firebaseSignOut}>Sign out</button>
-        
+        <button className="ms-auto btn btn-dark loginbtn" onClick={handleSignOut}>Sign out</button>
+
     );
-    
+
     const AuthButton = () => {
         const [user] = useAuthState();
         return user ? <></> : (<SignInButton />);
@@ -24,15 +37,15 @@ const Banner = ({banner, message}) => {
 
     const ProfilePhoto = () => {
         const [user] = useAuthState();
-        return user? <img id="profilePic" onClick={firebaseSignOut} src={user.photoURL} alt="Profile Photo" class="circle_profile_photo"/> : <></>;
+        return user ? <img id="profilePic" onClick={handleSignOut} src={user.photoURL} alt="Profile Photo" class="circle_profile_photo" /> : <></>;
     }
-    
+
     return (
         <div className="topTitle">
             {/* <button className="navbar-toggle-button" onClick={() => setNavBarOpen(!navBarOpen)}>☰</button> */}
             {/* <NavBar open={navBarOpen} onClose={() => setNavBarOpen(false)} /> */}
             <div className="auth">
-                <AuthButton/>
+                <AuthButton />
                 <ProfilePhoto></ProfilePhoto>
             </div>
             <h1>{banner}</h1>

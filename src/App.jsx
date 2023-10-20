@@ -7,6 +7,7 @@ import Banner from "./components/Banner";
 import RecommendationList from "./components/RecommendationList";
 import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
 import BottomNavbar from "./components/BottomNavBar";
+import GoogleLogin from "./components/Login";
 
 
 const App = () => {
@@ -15,11 +16,12 @@ const App = () => {
 
   return (
     <div className="App">
-      
+
       <BrowserRouter>
-      <Banner banner="FurMate" message="Find Your Pet Today!" />
+        <Banner banner="FurMate" message="Find Your Pet Today!" />
         <Routes>
-          <Route path="/" element={<Questionnaire className="content" setResults={setQuestionnaireResults}/>}></Route>
+          <Route path="/" element={<GoogleLogin />}></Route>
+          <Route path="/questionnaire" element={<Questionnaire className="content" setResults={setQuestionnaireResults} />}></Route>
           <Route path="/recommendations" element={<RecommendationList className="content" results={QuestionnaireResults} />}></Route>
         </Routes>
         {/* <BottomNavbar /> */}
