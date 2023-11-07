@@ -25,11 +25,6 @@ const Banner = ({ banner, message }) => {
         </div >
     );
 
-    const SignOutButton = () => (
-        <button className="ms-auto btn btn-dark loginbtn" onClick={handleSignOut}>Sign out</button>
-
-    );
-
     const AuthButton = () => {
         const [user] = useAuthState();
         return user ? <></> : (<SignInButton />);

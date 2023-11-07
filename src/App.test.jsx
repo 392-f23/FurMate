@@ -1,7 +1,6 @@
-import {describe, expect, test} from 'vitest';
+import {describe, expect, it, test, vi} from 'vitest';
 import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
-
 describe('counter tests', () => {
     
   test("Counter should be 0 at the start", () => {
@@ -15,5 +14,4 @@ describe('counter tests', () => {
     fireEvent.click(counter);
     expect(await screen.getByText('count is: 1')).toBeDefined();
   });
-
 });
