@@ -7,13 +7,12 @@ function GoogleLogin() {
     let navigate = useNavigate();
 
     const handleGoogleLogin = async () => {
-        const userData = await signInWithGoogle();
-        console.log("WORKED")
-        console.log(userData)
-        if(userData){
-            navigate('/questionnaire')
-            console.log("navved")
-        }
+        try {
+            await signInWithGoogle();
+            navigate('/questionnaire');
+          } catch (error) {
+            console.error(error);
+          }
 
     }
 
