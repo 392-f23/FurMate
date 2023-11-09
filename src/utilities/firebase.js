@@ -64,6 +64,7 @@ export const signInWithGoogle = async () => {
     prompt: "select_account"
   });
   const res = await signInWithPopup(getAuth(firebase), provider);
+  console.log(res);
   return res;
 
 };

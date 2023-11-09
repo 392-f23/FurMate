@@ -8,16 +8,20 @@ function GoogleLogin() {
 
     const handleGoogleLogin = async () => {
         const userData = await signInWithGoogle();
+        console.log("WORKED")
+        console.log(userData)
         if(userData){
             navigate('/questionnaire')
+            console.log("navved")
         }
+
     }
 
     return (
         <div data-cy="login" className="login">
             <h2>Login with Google:</h2>
             <br></br>
-            <button id="button" class="btn btn-primary" onClick={handleGoogleLogin}>Login</button>
+            <button data-testid="login-button" id="button" className="btn btn-primary" onClick={handleGoogleLogin}>Login</button>
         </div>
     );
 }
