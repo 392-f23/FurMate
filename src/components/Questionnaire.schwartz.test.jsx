@@ -13,32 +13,35 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 vi.mock('../utilities/getResults.js');
 
 // spy for useNavigate 
-const mockNavigate = vi.fn();
+const mockUseNavigate = vi.fn();
 vi.mock('react-router-dom', async () => {
     const actual = await vi.importActual('react-router-dom');
     return {
         ...actual,
-        useNavigate: () => mockNavigate,
+        useNavigate: () => mockUseNavigate,
     };
 });
 
 describe('submitting questionnaire', () => {
     // vi.mock('../utilities/firebase');
-    useGetResults.mockResolvedValue([[{pet: {}, score: 1}], null]);
+    useGetResults.mockReturnValue({ petScores: true, error: null });
+    const mockNavigate = vi.fn();
+    mockUseNavigate.mockReturnValue(mockNavigate);
 
     it('should navigate to recommendations', async () => {
         const mockSetResults = vi.fn();
-        const mockNavigate = useNavigate();
+        // const mockNavigate = useNavigate();
         // signInWithGoogle.mockResolvedValue(true);
         render(
             <Router>
               <Questionnaire setResults={mockSetResults} />
             </Router>
         );
-        fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
 
         await waitFor(() => {
-            expect(mockNavigate).toHaveBeenCalledWith('/recommendations');
+            fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
         });
+
+        expect(mockNavigate).toHaveBeenCalledWith('/recommendations');
     });
 });
