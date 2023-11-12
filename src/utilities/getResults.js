@@ -5,11 +5,15 @@ const useGetResults = (selectedAnswers) => {
   const [data, error] = useDbData('/pets/');
   const [petScores, setPetScores] = useState([]);
 
+  if (selectedAnswers.length === 0) {
+    return { petScores: [], error: 'An error occurred' };
+  }
+
   useEffect(() => {
     if (data) {
       let petsData = data;
       let scores = new Array(petsData.length).fill(null);
-      petsData.map((item, i) => scores[i] = {pet: item, score: 0});
+      petsData.map((item, i) => scores[i] = { pet: item, score: 0 });
 
       for (let i = 0; i < petsData.length; i++) {
         for (let j = 0; j < selectedAnswers.length; j++) {
