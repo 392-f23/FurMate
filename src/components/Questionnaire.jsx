@@ -3,13 +3,10 @@ import QuestionList from "./QuestionList";
 import './Questionnaire.css';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import getResults from '../utilities/getResults';
 import useGetResults from '../utilities/getResults';
 
 const Questionnaire = ({ setResults }) => {
   let navigate = useNavigate();
-  console.log("PRINTING NAVIGATE");
-  console.log(navigate);
   const[isSubmitted, setIsSubmitted] = useState(false);
 
   const questionnaire = {
@@ -65,11 +62,9 @@ const Questionnaire = ({ setResults }) => {
   const { petScores, error } = useGetResults(selectedAnswers);
 
   useEffect(() => {
-    console.log("IN USEEFFECT");
     console.log(isSubmitted);
     console.log(petScores);
     if (isSubmitted && petScores) {
-      console.log("IN IF");
       setResults(petScores);
       navigate('/recommendations');
     }
