@@ -1,47 +1,38 @@
 import { describe, it, vi } from "vitest";
 import useGetResults from "../utilities/getResults";
-import { useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Questionnaire from './Questionnaire';
-import { signInWithGoogle, useDbData } from '../utilities/firebase';
-import { useState } from "react";
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import RecommendationList from "./RecommendationList";
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 
 // vi.mock('../utilities/getResults.js', () => ({
 //     useGetResults: vi.fn(() => [[], null])
 // }));
-vi.mock('../utilities/getResults.js');
 
-// spy for useNavigate 
-const mockUseNavigate = vi.fn();
-vi.mock('react-router-dom', async () => {
-    const actual = await vi.importActual('react-router-dom');
-    return {
-        ...actual,
-        useNavigate: () => mockUseNavigate,
-    };
-});
+vi.mock('../utilities/getResults.js');
 
 describe('submitting questionnaire', () => {
     // vi.mock('../utilities/firebase');
     useGetResults.mockReturnValue({ petScores: true, error: null });
-    const mockNavigate = vi.fn();
-    mockUseNavigate.mockReturnValue(mockNavigate);
 
     it('should navigate to recommendations', async () => {
-        const mockSetResults = vi.fn();
-        // const mockNavigate = useNavigate();
-        // signInWithGoogle.mockResolvedValue(true);
-        render(
-            <Router>
-              <Questionnaire setResults={mockSetResults} />
-            </Router>
-        );
+      const user = userEvent.setup()
 
-        await waitFor(() => {
-            fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
-        });
+      const mockSetResults = vi.fn();
+      // signInWithGoogle.mockResolvedValue(true);
+      // mockNavigate('/test path')
 
-        expect(mockNavigate).toHaveBeenCalledWith('/recommendations');
-    });
+      render(
+          <Router>
+            <Routes>
+                <Route path="/" element={ <Questionnaire setResults={mockSetResults} /> }></Route>
+                <Route path="/recommendations" element={<RecommendationList className="content" results={[]} />}></Route>
+            </Routes>
+          </Router>
+      );
+
+      await user.click(screen.getByRole('button', { name: 'Submit' }));
+      expect(screen.getByText(/Back to Questionnaire/)).toBeDefined();
+  });
 });
