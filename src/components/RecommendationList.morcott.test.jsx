@@ -2,8 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import '@testing-library/jest-dom';
 import RecommendationList from './RecommendationList';
-import Questionnaire from './Questionnaire'; // Ensure this is imported if needed
+import Questionnaire from './Questionnaire';
 
 vi.mock('../utilities/firebase', async () => {
     const actual = await vi.importActual('../utilities/firebase');
@@ -43,7 +44,8 @@ describe('back to questionnaire button', () => {
         userEvent.click(backButton);
 
         await waitFor(() => {
-            expect(mockNavigate).toHaveBeenCalledWith('/questionnaire');
+            const questionnaireElement = screen.getByText('Submit');
+            expect(questionnaireElement).toBeInTheDocument();
         });
     });
 });
